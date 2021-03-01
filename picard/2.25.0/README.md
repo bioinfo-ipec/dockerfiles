@@ -17,17 +17,17 @@ This toolset can be used to perform the following operations:
 - Variant Manipulation: tools that manipulate variant call format (VCF) data.
 - Other: Miscellaneous tools.
 
-To see `Picard` options, just run `docker run --rm biagii/picard picard -h`.
+To see `Picard` options, just run `docker run --rm bioinfoipec/picard picard -h`.
 
 # Using the Picard image in Linux
-You should adapt and run the following command: `docker run --rm -v /your/data/dir:/data biagii/picard picard <picard-application-name> <options>`
+You should adapt and run the following command: `docker run --rm -v /your/data/dir:/data bioinfoipec/picard picard <picard-application-name> <options>`
 
 In this command, you should replace:
 - `/your/data/dir` to point to the directory that contains the input files you want to analyze.
 - `<picard-application-name>` to the name of the `Picard` application you want to use.
 - `<options> ` with the specific options of the `Picard` application. These options will include the input/output files, which should be referenced under `/data/`.
 
-For instance, to clean a SAM file, you should run: `docker run --rm -v /your/data/dir:/data biagii/picard picard CleanSam -I /data/aln-pe.sam -O /data/aln-pe_cleaned.sam`
+For instance, to clean a SAM file, you should run: `docker run --rm -v /your/data/dir:/data bioinfoipec/picard picard CleanSam -I /data/aln-pe.sam -O /data/aln-pe_cleaned.sam`
 
 ## Test data
 To test the previous command, the input SAM file used is in `testdata` directory.

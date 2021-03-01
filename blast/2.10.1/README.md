@@ -4,11 +4,11 @@ This image facilitates the usage of [BLAST](https://blast.ncbi.nlm.nih.gov/Blast
 
 ## Using BLAST image
 
-In order to use this image you need to create a custom database from a multi-FASTA file of sequences with this command: `docker run --rm -v /your/data/dir:/data biagii/blast makeblastdb -in /data/mydb.fasta -dbtype nucl -parse_seqids`
+In order to use this image you need to create a custom database from a multi-FASTA file of sequences with this command: `docker run --rm -v /your/data/dir:/data bioinfoipec/blast makeblastdb -in /data/mydb.fasta -dbtype nucl -parse_seqids`
 
 See the following section, [`Building a BLAST database with local sequences`](https://www.ncbi.nlm.nih.gov/books/NBK279688/), for more details.
 
-After the creation of the database, in order to execute a `blastn` for instance, you should adapt and run the following command: `docker run --rm -v /your/data/dir:/data biagii/blast blastn -query /data/input -db /data/mydb.fasta -evalue 0.05 -num_descriptions 500000 -num_alignments 500000 -outfmt 3 -out /data/output`
+After the creation of the database, in order to execute a `blastn` for instance, you should adapt and run the following command: `docker run --rm -v /your/data/dir:/data bioinfoipec/blast blastn -query /data/input -db /data/mydb.fasta -evalue 0.05 -num_descriptions 500000 -num_alignments 500000 -outfmt 3 -out /data/output`
 
 In this command, you should replace:
 - `/your/data/dir` to point to the directory that contains the query file you want to execute.
@@ -20,4 +20,4 @@ For other options common to all `BLAST` search applications please go [here](htt
 
 *Note*: The parameter `max_target_seqs` does not behave as it is described. Please read the following [article](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty833/5106166).
 
-To obtain abbreviated help of an application, you just need to run: `docker run --rm biagii/blast <blast-application-name> -h` (e.g. `docker run --rm biagii/blast blastn -h`). For more extensive documention just replace the `-h` flag for the `-help` flag.
+To obtain abbreviated help of an application, you just need to run: `docker run --rm bioinfoipec/blast <blast-application-name> -h` (e.g. `docker run --rm bioinfoipec/blast blastn -h`). For more extensive documention just replace the `-h` flag for the `-help` flag.

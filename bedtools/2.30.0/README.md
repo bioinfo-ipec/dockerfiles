@@ -3,7 +3,7 @@
 This image allows the usage of the [Bedtools](http://bedtools.readthedocs.io/en/latest/index.html) suite - a fast and flexible toolset for genome arithmetic. `Bedtools` allows to intersect, merge, count, complement, and shuffle genomic intervals from multiple files in widely-used genomic file formats such as BAM, BED, GFF/GTF, VCF.
 
 ## Using the Bedtools
-To run an application, you should adapt and run the following command: `docker run --rm -v /your/data/dir:/data biagii/bedtools <bedtools-application-name> -fi <input FASTA> -bed <BED/GFF/VCF> -fo /data/stdout`
+To run an application, you should adapt and run the following command: `docker run --rm -v /your/data/dir:/data bioinfoipec/bedtools <bedtools-application-name> -fi <input FASTA> -bed <BED/GFF/VCF> -fo /data/stdout`
 
 In this command, you should replace:
 - `/your/data/dir` to point to the directory that contains the input files you want to analyze.
@@ -12,7 +12,7 @@ In this command, you should replace:
 - `<BED/GFF/VCF>` to the actual name of your input BED/GFF/VCF file.
 - `stdout` to the actual name of your output file.
 
-For instance, to use the `fastaFromBed` application, you should run: `docker run --rm -v /your/data/dir:/data biagii/bedtools fastaFromBed -fi /data/input_fasta -bed /data/input_gff -fo /data/stdout`
+For instance, to use the `fastaFromBed` application, you should run: `docker run --rm -v /your/data/dir:/data bioinfoipec/bedtools fastaFromBed -fi /data/input_fasta -bed /data/input_gff -fo /data/stdout`
 
 *Note*: In order to use a less complex BED/GFF/VCF file you may want to filter it for exons first, for example, by performing:
 
@@ -21,7 +21,7 @@ grep -P "\texon\t" input_gff
 ```
 
 ## Help
-By running the command `docker run --rm -v /your/data/dir:/data biagii/bedtools bedtools -h` you can list the tools included in this suite, namely:
+By running the command `docker run --rm -v /your/data/dir:/data bioinfoipec/bedtools bedtools -h` you can list the tools included in this suite, namely:
 
 - `annotateBed`: annotate coverage of features from multiple files.
 - `bamToBed`: convert BAM alignments to BED (& other) formats.
@@ -62,4 +62,4 @@ By running the command `docker run --rm -v /your/data/dir:/data biagii/bedtools 
 - `windowBed`: find overlapping intervals within a window around an interval.
 - `windowMaker`: make interval “windows” across a genome.
 
-To obtain the help of a particular application, you just need to run: `docker run --rm -v /your/data/dir:/data biagii/bedtools <bedtools-application-name>` (e.g. `docker run --rm -v /your/data/dir:/data biagii/bedtools fastaFromBed`)
+To obtain the help of a particular application, you just need to run: `docker run --rm -v /your/data/dir:/data bioinfoipec/bedtools <bedtools-application-name>` (e.g. `docker run --rm -v /your/data/dir:/data bioinfoipec/bedtools fastaFromBed`)

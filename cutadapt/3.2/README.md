@@ -1,7 +1,7 @@
 # cutadapt
 
 ## Using the Cutadapt image
-You should adapt and run the following command: `docker run --rm -v /your/data/dir:/data biagii/cutadapt -u 10 /data/input.fq -o /data/output.fq`
+You should adapt and run the following command: `docker run --rm -v /your/data/dir:/data bioinfoipec/cutadapt -u 10 /data/input.fq -o /data/output.fq`
 
 In this command, you should replace:
 - `/your/data/dir` to point to the directory that contains the input file you want to process.
@@ -10,7 +10,7 @@ In this command, you should replace:
 
 A negative value after `-u` would trims reads at the end.
 
-To see the [Cutadapt](http://cutadapt.readthedocs.io/) help, just run `docker run --rm biagii/cutadapt cutadapt --help`.
+To see the [Cutadapt](http://cutadapt.readthedocs.io/) help, just run `docker run --rm bioinfoipec/cutadapt cutadapt --help`.
 
 ## Test data
 To test the previous command, you can download [this FASTQ compressed file](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=dload&run_list=SRR1654650&format=fastq) (1.1GB). Note that it does not need to be decompressed as `Cutadapt` can deal with both compressed and uncompressed fastq files. 
