@@ -15,4 +15,4 @@ LABEL about.license_file="https://bedtools.readthedocs.io/en/latest/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda bedtools
+RUN conda install -y -c bioconda bedtools=2.30.0

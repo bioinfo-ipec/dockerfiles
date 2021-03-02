@@ -15,4 +15,4 @@ LABEL about.license_file="http://pachterlab.github.io/kallisto"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda kallisto
+RUN conda install -y -c bioconda kallisto=0.46.2

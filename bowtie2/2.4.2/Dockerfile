@@ -15,4 +15,4 @@ LABEL about.license_file="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda bowtie2
+RUN conda install -y -c bioconda bowtie2=2.4.2

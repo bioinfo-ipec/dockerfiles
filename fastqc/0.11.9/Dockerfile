@@ -15,4 +15,4 @@ LABEL about.license_file="https://www.bioinformatics.babraham.ac.uk/projects/fas
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda fastqc
+RUN conda install -y -c bioconda fastqc=0.11.9

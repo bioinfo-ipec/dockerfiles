@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/DaehwanKimLab/tophat"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda tophat
+RUN conda install -y -c bioconda tophat=2.1.1

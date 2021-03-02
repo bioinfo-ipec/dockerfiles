@@ -15,4 +15,4 @@ LABEL about.license_file="https://vcftools.github.io/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda vcftools
+RUN conda install -y -c bioconda vcftools=0.1.16

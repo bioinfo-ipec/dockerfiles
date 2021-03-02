@@ -15,4 +15,4 @@ LABEL about.license_file="http://bio-bwa.sourceforge.net"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda bwa
+RUN conda install -y -c bioconda bwa=0.7.17

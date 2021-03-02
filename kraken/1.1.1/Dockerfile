@@ -15,4 +15,4 @@ LABEL about.license_file="http://ccb.jhu.edu/software/kraken/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda kraken
+RUN conda install -y -c bioconda kraken=1.1.1

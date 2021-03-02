@@ -15,4 +15,4 @@ LABEL about.license_file="http://www.usadellab.org/cms/?page=trimmomatic"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda trimmomatic
+RUN conda install -y -c bioconda trimmomatic=0.39

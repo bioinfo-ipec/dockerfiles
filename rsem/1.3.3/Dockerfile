@@ -15,4 +15,4 @@ LABEL about.license_file="https://deweylab.github.io/RSEM/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda rsem
+RUN conda install -y -c bioconda rsem=1.3.3

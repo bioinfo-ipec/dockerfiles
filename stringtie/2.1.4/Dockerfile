@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/gpertea/stringtie"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda stringtie
+RUN conda install -y -c bioconda stringtie=2.1.4

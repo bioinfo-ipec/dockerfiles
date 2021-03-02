@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/samtools/samtools"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda samtools bcftools openssl=1.0
+RUN conda install -y -c bioconda samtools=1.11 bcftools=1.11 openssl=1.0

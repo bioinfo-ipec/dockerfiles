@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/alexdobin/STAR"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda star
+RUN conda install -y -c bioconda star=2.7.8a

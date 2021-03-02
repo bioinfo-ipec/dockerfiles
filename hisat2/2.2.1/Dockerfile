@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/DaehwanKimLab/hisat2"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda hisat2
+RUN conda install -y -c bioconda hisat2=2.2.1

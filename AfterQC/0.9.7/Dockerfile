@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/OpenGene/AfterQC"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda afterqc
+RUN conda install -y -c bioconda afterqc=0.9.7

@@ -15,4 +15,4 @@ LABEL about.license_file="http://qualimap.conesalab.org"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda qualimap
+RUN conda install -y -c bioconda qualimap=2.2.2d

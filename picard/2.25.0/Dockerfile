@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/broadinstitute/picard"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda picard
+RUN conda install -y -c bioconda picard=2.25.0

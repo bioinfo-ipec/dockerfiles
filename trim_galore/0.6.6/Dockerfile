@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/FelixKrueger/TrimGalore"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda trim-galore
+RUN conda install -y -c bioconda trim-galore=0.6.6

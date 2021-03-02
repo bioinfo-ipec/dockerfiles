@@ -15,4 +15,4 @@ LABEL about.license_file="https://blast.ncbi.nlm.nih.gov/Blast.cgi"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda blast
+RUN conda install -y -c bioconda blast=2.10.1
