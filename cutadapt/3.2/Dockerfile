@@ -15,4 +15,4 @@ LABEL about.license_file="https://cutadapt.readthedocs.io/en/stable/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda cutadapt=3.2
+RUN conda install -y -c bioconda cutadapt
