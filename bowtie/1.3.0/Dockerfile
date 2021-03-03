@@ -15,4 +15,4 @@ LABEL about.license_file="https://github.com/BenLangmead/bowtie"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda bowtie=1.3.0
+RUN conda install -y -c bioconda bowtie

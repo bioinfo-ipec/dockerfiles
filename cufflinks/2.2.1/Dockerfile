@@ -15,7 +15,7 @@ LABEL about.license_file="http://cole-trapnell-lab.github.io/cufflinks/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c anaconda libboost=1.73.0 samtools=1.11
+RUN conda install -y -c anaconda libboost samtools
 
 WORKDIR /tmp
 
