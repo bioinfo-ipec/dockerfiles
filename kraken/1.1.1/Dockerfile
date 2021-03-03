@@ -15,4 +15,14 @@ LABEL about.license_file="http://ccb.jhu.edu/software/kraken/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda kraken=1.1.1
+RUN apt-get update && \ 
+    apt-get install -y unzip build-essential
+
+WORKDIR /tmp
+
+RUN wget https://github.com/DerrickWood/kraken/archive/v1.1.1.zip && \
+    unzip v1.1.1.zip && \ 
+    rm -rf v1.1.1.zip && \
+    /tmp/kraken-1.1.1/install_kraken.sh /usr/local/bin/kraken && \ 
+
+ENV PATH=$PATH:/usr/local/bin/kraken

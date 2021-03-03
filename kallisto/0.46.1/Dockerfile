@@ -5,7 +5,7 @@ FROM continuumio/miniconda:4.7.12
 LABEL base_image="continuumio/miniconda"
 LABEL version="latest"
 LABEL software="kallisto"
-LABEL software.version="0.46.2"
+LABEL software.version="0.46.1"
 LABEL about.summary="quantifies abundances of transcripts from RNA-Seq data, or more generally of target sequences using high-throughput sequencing reads"
 LABEL about.home="http://pachterlab.github.io/kallisto"
 LABEL about.documentation="http://pachterlab.github.io/kallisto"
@@ -15,4 +15,11 @@ LABEL about.license_file="http://pachterlab.github.io/kallisto"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda kallisto=0.46.2
+WORKDIR /tmp
+
+RUN wget https://github.com/pachterlab/kallisto/releases/download/v0.46.1/kallisto_linux-v0.46.1.tar.gz && \
+    tar -xf kallisto_linux-v0.46.1.tar.gz && \ 
+    rm -rf kallisto_linux-v0.46.1.tar.gz && \
+    mv ./kallisto /usr/local/bin
+
+ENV PATH=$PATH:/usr/local/bin/kallisto

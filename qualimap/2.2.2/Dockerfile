@@ -15,4 +15,21 @@ LABEL about.license_file="http://qualimap.conesalab.org"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda qualimap=2.2.2d
+RUN apt-get update && \ 
+    apt-get install -y unzip
+
+WORKDIR /tmp
+
+RUN wget https://bitbucket.org/kokonech/qualimap/downloads/qualimap_v2.2.1.zip && \
+    unzip qualimap_v2.2.1.zip && \ 
+    rm -rf hisat2.zip && \
+    mv ./qualimap_v2.2.1 /usr/local/bin
+
+RUN conda install -y -c anaconda openjdk
+RUN conda install -y -c conda-forge r-base=4.0.3
+
+RUN echo 'install.packages(c("BiocManager", "optparse", "XML"))' >> /opt/packages1.r && \
+	echo 'BiocManager::install(c("NOISeq", "Repitools", "Rsamtools", "rtracklayer"))' >> /opt/packages1.r && \
+  Rscript /opt/packages1.r
+
+ENV PATH=$PATH:/usr/local/bin/qualimap_v2.2.1
