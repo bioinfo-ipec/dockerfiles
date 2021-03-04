@@ -28,8 +28,7 @@ RUN wget https://bitbucket.org/kokonech/qualimap/downloads/qualimap_v2.2.1.zip &
 RUN conda install -y -c anaconda openjdk
 RUN conda install -y -c conda-forge r-base=4.0.3
 
-RUN echo 'install.packages(c("BiocManager", "optparse", "XML"))' >> /opt/packages1.r && \
-	echo 'BiocManager::install(c("NOISeq", "Repitools", "Rsamtools", "rtracklayer"))' >> /opt/packages1.r && \
-  Rscript /opt/packages1.r
+RUN R -e "install.packages(c('BiocManager', 'optparse', 'XML'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "BiocManager::install(c('NOISeq', 'Repitools'))"
 
 ENV PATH=$PATH:/usr/local/bin/qualimap_v2.2.1
