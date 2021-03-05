@@ -1,8 +1,8 @@
 ################## BASE IMAGE ######################
-FROM centos:8
+FROM continuumio/miniconda:4.7.12
 
 ################## METADATA ######################
-LABEL base_image="centos:8"
+LABEL base_image="continuumio/miniconda"
 LABEL version="latest"
 LABEL software="bcl2fastq"
 LABEL software.version="2.20.0"
@@ -15,12 +15,4 @@ LABEL about.license_file="https://support.illumina.com/sequencing/sequencing_sof
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-COPY bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm /tmp
-
-RUN yum install -y zlib-devel glibc
-
-WORKDIR /tmp
-RUN yum install -y bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm && \
-    rm -rf bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm
-
-WORKDIR /
+RUN conda install -c dranew bcl2fastq
