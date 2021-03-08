@@ -16,6 +16,6 @@ MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
 WORKDIR /tmp
-RUN https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb && \
+RUN wget https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb && \
     dpkg -i mafft_7.475-1_amd64.deb && \ 
     rm -rf mafft_7.475-1_amd64.deb
