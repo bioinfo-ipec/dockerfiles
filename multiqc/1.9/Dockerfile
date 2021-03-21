@@ -1,11 +1,11 @@
 ################## BASE IMAGE ######################
-FROM czentye/matplotlib-minimal:3.1.2
+FROM ubuntu:20.04
 
 ################## METADATA ######################
-LABEL base_image="czentye/matplotlib-minimal:3.1.2"
+LABEL base_image="ubuntu:20.04"
 LABEL version="latest"
 LABEL software="multiqc"
-LABEL software.version="1.9"
+LABEL software.version="1.10"
 LABEL about.summary="create aggregate bioinformatics analysis reports across many samples and tools"
 LABEL about.home="https://github.com/ewels/MultiQC"
 LABEL about.documentation="https://github.com/ewels/MultiQC"
@@ -15,12 +15,9 @@ LABEL about.license_file="https://github.com/ewels/MultiQC"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-WORKDIR /tmp
-RUN wget https://github.com/ewels/MultiQC/archive/v1.9.zip && \
-    unzip v1.9.zip && \
-    rm -rf v1.9.zip
+ARG DEBIAN_FRONTEND=noninteractive
 
-WORKDIR /tmp/MultiQC-1.9
-RUN python -m pip install .
+RUN apt-get update && \ 
+    apt-get install -y software-properties-common python3-pip
 
-WORKDIR /
+RUN pip3 install multiqc==1.10
