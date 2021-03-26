@@ -1,5 +1,3 @@
-conda install -y -c bioconda subread=2.0.1
-
 # SUBREAD
 
 This image facilitates the usage of [SUBREAD](http://subread.sourceforge.net), that is a high-performance read alignment, quantification and mutation discovery.
