@@ -1,5 +1,6 @@
 ################## BASE IMAGE ######################
-FROM ubuntu:20.04
+#FROM ubuntu:20.04
+FROM continuumio/miniconda:4.7.12
 
 ################## METADATA ######################
 LABEL base_image="ubuntu:20.04"
@@ -15,6 +16,8 @@ LABEL about.license_file="https://github.com/samtools/samtools"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && \ 
     apt-get install -y autoconf automake make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev libncurses5-dev wget unzip
 
@@ -51,5 +54,10 @@ RUN autoheader && \
     ./configure && \
     make && \
     make install
+
+RUN conda config --add channels defaults && \ 
+    conda config --add channels bioconda && \ 
+    conda config --add channels conda-forge && \
+    conda install -y rust-bio-tools
 
 WORKDIR /
