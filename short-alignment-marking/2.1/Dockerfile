@@ -1,5 +1,5 @@
 ################## BASE IMAGE ######################
-FROM continuumio/miniconda3
+FROM bioinfoipec/samtools
 
 ################## METADATA ######################
 LABEL base_image="continuumio/miniconda"
@@ -16,9 +16,8 @@ MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
 WORKDIR /tmp
-RUN git clone https://github.com/nygenome/nygc-short-alignment-marking.git
+RUN git clone https://github.com/nygenome/nygc-short-alignment-marking.git && \ 
+    mv ./nygc-short-alignment-marking /usr/local/bin
 
-ENV LD_LIBRARY_PATH=/tmp/nygc-short-alignment-marking/lib:$LD_LIBRARY_PATH
-ENV PATH=$PATH:/tmp/nygc-short-alignment-marking
-
-WORKDIR /
+ENV LD_LIBRARY_PATH=/usr/local/bin/nygc-short-alignment-marking/lib:$LD_LIBRARY_PATH
+ENV PATH=$PATH:/usr/local/bin/nygc-short-alignment-marking
