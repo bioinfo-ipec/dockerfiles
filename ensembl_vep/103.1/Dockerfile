@@ -56,4 +56,6 @@ RUN autoheader && \
     make && \
     make install
 
+RUN conda install -y -c bioconda vcf2maf
+
 WORKDIR /
