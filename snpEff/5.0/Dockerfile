@@ -15,4 +15,4 @@ LABEL about.license_file="https://pcingola.github.io/SnpEff/"
 MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
-RUN conda install -y -c bioconda snpeff=5.0
+RUN conda install -y -c bioconda snpeff=5.0 snpsift 
