@@ -16,7 +16,7 @@ MAINTAINER Carlos Biagi Jr <cbiagijr@gmail.com>
 
 ################## INSTALLATION ######################
 RUN apt-get update && \ 
-    apt-get install -y unzip
+    apt-get install -y unzip libxrender1 libxtst6 libxi6 libxext6
 
 WORKDIR /tmp
 
